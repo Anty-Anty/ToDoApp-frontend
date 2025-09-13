@@ -1,0 +1,41 @@
+.modal {
+  /* width: calc(30% - 2rem); */
+  min-width: 18rem;
+  height: auto;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* This centers the modal */
+
+  z-index: 100;
+  background: #2c2c2c;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+}
+
+.modal__header {
+ 
+  color: white;
+}
+
+.modal__header h2 {
+  margin: 0.5rem;
+}
+
+.modal__content {
+    display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.5rem 0.5rem;
+}
+
+.modal__footer {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 0.5rem;
+}
+
+

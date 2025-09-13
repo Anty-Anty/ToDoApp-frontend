@@ -1,0 +1,103 @@
+.add-item {
+
+  margin: 1rem;
+  width: calc(45% - 2rem);
+  min-width: 17.5rem;
+  justify-self: center; /* Parant element has display:grit so it makes child centered */
+  height:auto;
+}
+
+
+
+.add-item:hover h2,
+.add-item:active h2,
+.add-item:hover h3,
+.add-item:active h3,
+.add-item:hover p,
+.add-item:hover p {
+  color: #292929;
+}
+
+
+
+.card.add-item__content {
+
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  
+}
+
+.add-item__form {
+
+  display: flex;
+  gap: 0.5rem;
+
+  width: 100%;
+  height: 100%;
+  
+  padding: 1rem;
+  color: white;
+  background: #292929;
+
+  /* transition: background 0.2s; */
+
+}
+
+.add-item__form:hover .button-stack {
+  display: flex; /* Show on hover */
+  
+}
+
+/* .add-item__form:hover,
+.add-item__form:active {
+  background: #ffd900;
+} */
+
+
+.add-item__input {
+  display: flex;
+  flex-direction: column;
+
+  flex:2
+}
+
+.add-item__input .add-input {
+  width: 100%; /* the reason why input was overflowing */
+  flex:3; /* stretches the input fields to the bottom  */
+  background: #2c2c2c;
+  border-radius: 4px;
+  border: 1px solid #5c5b5b;
+
+  text-align: center
+}
+
+.add-item__input .add-textarea {
+  width: 100%; /* the reason why input was overflowing */
+  flex:7; /* stretches the input fields to the bottom  */
+  background: #2c2c2c;
+  border-radius: 4px;
+  border: 1px solid #5c5b5b;
+
+  text-align: center;
+  resize: none; /* disable manual resizing of a <textarea>  */
+}
+
+.add-item__input input::placeholder {
+  color: #505050; /* placeholder color */
+  opacity: 1;  /* ensures full visibility in some browsers */
+}
+.add-item__input textarea::placeholder {
+  color: #505050;
+  opacity: 1;
+}
+
+.add-button-stack {
+  display: flex; 
+  flex-direction: column;
+  gap: 6px; /* Space between buttons */
+
+  flex:1;
+}
+
+
