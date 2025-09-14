@@ -63,7 +63,6 @@ function App() {
     routes = (
       <Routes>
         <Route path="/:uid/list" element={<ToDoItems />} />
-        {/* change u1 to id from DB */}
         <Route path={`/${userId}/settings`} element={<UserSettings />} />
         <Route path="*" element={<Navigate to={`/${userId}/list`} replace />} />
       </Routes>
