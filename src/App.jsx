@@ -50,13 +50,41 @@ function App() {
   }, []);
 
   //auto loging after pagereload using localstorage data (useEffect always runs after the render cicle)
+  // useEffect(() => {
+  //   const storedData = JSON.parse(localStorage.getItem('userData'));
+  //   if (storedData && storedData.token) {
+  //     // REMOVE NAME FROM HERE LATER
+  //     login(storedData.userId, storedData.name, storedData.token);
+  //   }
+  // }, [login]);
+
   useEffect(() => {
-    const storedData = JSON.parse(localStorage.getItem('userData'));
-    if (storedData && storedData.token) {
-      // REMOVE NAME FROM HERE LATER
-      login(storedData.userId, storedData.name, storedData.token);
-    }
-  }, [login]);
+  const storedData = JSON.parse(localStorage.getItem('userData'));
+  if (storedData && storedData.token) {
+    // Verify token with backend
+    fetch(`${import.meta.env.VITE_BACKEND_URL}+/users/verify-token`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer ' + storedData.token
+      }
+    })
+      .then(res => {
+        if (!res.ok) {
+          throw new Error('Token verification failed');
+        }
+        return res.json();
+      })
+      .then(data => {
+        // If valid, log user in
+        login(storedData.userId, storedData.name, storedData.token);
+      })
+      .catch(err => {
+        console.log(err.message);
+        logout(); // clear invalid token
+      });
+  }
+}, [login, logout]);
 
   let routes;
   if (token) {
