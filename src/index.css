@@ -70,7 +70,7 @@ input:-webkit-autofill {
   line-height: 1.5;
   font-weight: 400;
 
-  /* color-scheme: light dark; */
+  color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #3f3f3f;
 
@@ -90,6 +90,7 @@ a:hover {
 }
 
 body {
+  background-color: #3f3f3f;
   margin: 0;
   padding-top: 5rem;
   display: flex;
