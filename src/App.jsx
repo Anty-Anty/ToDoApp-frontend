@@ -62,7 +62,7 @@ function App() {
   const storedData = JSON.parse(localStorage.getItem('userData'));
   if (storedData && storedData.token) {
     // Verify token with backend
-    fetch(`${import.meta.env.VITE_BACKEND_URL}+/users/verify-token`, {
+    fetch(`${import.meta.env.VITE_BACKEND_URL}/users/verify-token`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
