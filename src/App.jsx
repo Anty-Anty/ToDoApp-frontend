@@ -63,7 +63,7 @@ function App() {
     routes = (
       <Routes>
         <Route path="/:uid/list" element={<ToDoItems />} />
-        <Route path={`/${userId}/settings`} element={<UserSettings />} />
+        <Route path={`/:uid/settings`} element={<UserSettings />} />
         <Route path="*" element={<Navigate to={`/${userId}/list`} replace />} />
       </Routes>
     );
