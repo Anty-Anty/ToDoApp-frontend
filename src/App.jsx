@@ -79,7 +79,7 @@ function App() {
 
   return (
     <AuthContext.Provider
-      value={{ isLoggedIn: !!token, token: token, userId: userId, userName: userName, login: login, logout: logout }}
+      value={{ isLoggedIn: !!token, token: token, userId: userId, login: login, logout: logout }}
     >
 
       <BrowserRouter>

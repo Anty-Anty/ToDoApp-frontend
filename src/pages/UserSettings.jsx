@@ -9,7 +9,6 @@ import ErrorModal from '../components/UIElements/ErrorModal';
 
 const UserSettings = () => {
 
-    //THIS IS NEED TO BE HTTP REQUEST to get user data, not context
     const auth = useContext(AuthContext);
 
     const userId = useParams().uid;
