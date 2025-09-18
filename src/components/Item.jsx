@@ -11,7 +11,7 @@ const Item = props => {
         <>
             <li className='item'>
                 <Card className='item__content'>
-                    <div className='item__text'>
+                    <div className='item__text' style={{ "--user-title-color": props.userTitleColor }}>
                         {/* <div className='item__info'> */}
                              <h2 style={{ "--user-title-color": props.userTitleColor }}>{props.title}</h2>
                             {/* <h2>{props.title}</h2> */}

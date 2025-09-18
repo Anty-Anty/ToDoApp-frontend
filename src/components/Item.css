@@ -102,7 +102,7 @@
 
 .item__text:hover,
 .item__text:active {
-  background: #ffd900;
+  background: var(--user-title-color, #ffd900);
 }
 
 /* .item__info {
