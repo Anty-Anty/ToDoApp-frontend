@@ -16,10 +16,12 @@ const UserSettings = () => {
     const { isLoading, error, sendRequest, clearError } = useHttpClient();
 
     const [loadedUserInfo, setLoadedUserInfo] = useState();
+    const [pickedColor, setPickedColor] = useState("#ffd900");
 
+    //FETCH USER DATA
     useEffect(() => {
         //async is not used directly in useEffect. 
-        const fetchItems = async () => {
+        const fetchUserData = async () => {
             try {
                 const responseData = await sendRequest(
                     `${import.meta.env.VITE_BACKEND_URL}/users/${userId}/userInfo`,
@@ -27,11 +29,32 @@ const UserSettings = () => {
                     null,
                     { Authorization: 'Bearer ' + auth.token }
                 );
-                setLoadedUserInfo({ name: responseData.name, email: responseData.email });
+                setLoadedUserInfo({
+                    name: responseData.name,
+                    email: responseData.email,
+                    createdAt: responseData.createdAt
+                });
+
+                setPickedColor(responseData.userTitleColor || "#ffd900");
             } catch (err) { }
         };
-        fetchItems();
+        fetchUserData();
     }, [sendRequest, userId]);
+
+    // SAVE PICKED COLOR:
+    const saveColorHandler = async () => {
+        try {
+            await sendRequest(
+                `${import.meta.env.VITE_BACKEND_URL}/users/${userId}/color`,
+                'PATCH',
+                JSON.stringify({ userTitleColor: pickedColor }),
+                {
+                    'Content-Type': 'application/json',
+                    Authorization: 'Bearer ' + auth.token
+                }
+            );
+        } catch (err) { }
+    };
 
     return (
         <>
@@ -42,6 +65,28 @@ const UserSettings = () => {
                 <>
                     <p>User name: {loadedUserInfo.name}</p>
                     <p>Email: {loadedUserInfo.email}</p>
+                    {/* <p>Joined: {new Date(loadedUserInfo.createdAt).toLocaleDateString()}</p> */}
+                    <p>
+                        Joined:{" "}
+                        {new Date(loadedUserInfo.createdAt).toLocaleDateString("en-US", {
+                            month: "short", // "Sep"
+                            day: "numeric", // "13"
+                            year: "numeric", // "2025"
+                        })}
+                    </p>
+
+                    {/* Color Picker */}
+                    <div style={{ marginTop: "20px" }}>
+                        <label htmlFor="colorPicker">Pick item title color: </label>
+                        <input
+                            id="colorPicker"
+                            type="color"
+                            value={pickedColor}
+                            onChange={(e) => setPickedColor(e.target.value)}
+                        />
+                        <p>Selected color: <span style={{ color: pickedColor }}>{pickedColor}</span></p>
+                        <button onClick={saveColorHandler}>Save Color</button>
+                    </div>
                 </>
             )}
         </>

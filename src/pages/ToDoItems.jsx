@@ -43,6 +43,24 @@ const ToDoItem = () => {
         fetchItems();
     }, [sendRequest, userId]);
 
+    //FETCHING CUSTOM USER ITEM TITLE COLOR:
+    const [userColor, setUserColor] = useState("#ffd900"); // default black
+
+    useEffect(() => {
+        const fetchUserInfo = async () => {
+            try {
+                const responseData = await sendRequest(
+                    `${import.meta.env.VITE_BACKEND_URL}/users/${userId}/userInfo`,
+                    'GET',
+                    null,
+                    { Authorization: 'Bearer ' + auth.token }
+                );
+                setUserColor(responseData.userTitleColor || "#ffd900"); // fallback if not set
+            } catch (err) { }
+        };
+        fetchUserInfo();
+    }, [sendRequest, userId]);
+
     // ADD ITEM
     // state controls visibility of AddItem.jsx
     const [showAddItem, setShowAddItem] = useState(false);
@@ -102,7 +120,7 @@ const ToDoItem = () => {
                 `${import.meta.env.VITE_BACKEND_URL}/items/${deleteItemId}`,
                 'DELETE',
                 null,
-                {Authorization: 'Bearer ' + auth.token}
+                { Authorization: 'Bearer ' + auth.token }
             );
             // updating UI, could not figure out why delete trigers re-render, 
             // when adding and editing dont, probably something with Modal structure 
@@ -150,6 +168,7 @@ const ToDoItem = () => {
                     items={loadedItems}
                     showEditModalHandler={showEditModalHandler}
                     showDeleteModalHandler={showDeleteModalHandler}
+                    userTitleColor = {userColor}
                 />}
 
             {/* ADD ITEM */}

@@ -47,7 +47,7 @@
   font-size: 1.5rem;
   margin: 0 0 0.5rem 0;
   font-weight: normal;
-  color: #ffd900;
+  color: var(--user-title-color, #ffd900);
 }
 
 .item__text h2 {
@@ -69,6 +69,8 @@
   text-overflow: ellipsis;
    word-wrap: break-word;
    hyphens: auto;  
+   margin-top: 0;
+   margin-bottom: 0;
 }
 .item__text:hover p {
   -webkit-line-clamp: unset;

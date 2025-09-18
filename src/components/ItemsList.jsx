@@ -36,6 +36,7 @@ const ItemsList = props => {
                     description={item.description}
                     showEditModalHandler={()=>props.showEditModalHandler(item.id)} //pass the edited item Id
                     showDeleteModalHandler={()=>props.showDeleteModalHandler(item.id)} //pass the edited item Id
+                    userTitleColor={props.userTitleColor} 
                 />
 
             ))}
