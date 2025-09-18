@@ -6,7 +6,7 @@ import Card from './UIElements/Card';
 import Input from './FormElements/Input';
 import LoadingSpinner from './UIElements/LoadingSpinner';
 import ErrorModal from './UIElements/ErrorModal';
-import { VALIDATOR_REQUIRE, VALIDATOR_MINLENGTH } from './util/validators';
+import { VALIDATOR_REQUIRE, VALIDATOR_MINLENGTH, VALIDATOR_MAXLENGTH } from './util/validators';
 import { useForm } from '../hooks/form-hook';
 import { useHttpClient } from '../hooks/http-hook';
 import { AuthContext } from "../context/auth-context";
@@ -81,8 +81,8 @@ const AddItem = props => {
                                     placeholder="description"
                                     // rows={2}
                                     className='add-textarea'
-                                    validators={[VALIDATOR_MINLENGTH(3)]}
-                                    errorText='Please enter a valid description (at least 5 characters).'
+                                    validators={[VALIDATOR_MINLENGTH(3), VALIDATOR_MAXLENGTH(170)]}
+                                    errorText='Please enter a valid description (at least 5 characters, max 200).'
                                     onInput={inputHandler}
                                 />
 

@@ -7,6 +7,8 @@ import { useHttpClient } from '../hooks/http-hook';
 import LoadingSpinner from '../components/UIElements/LoadingSpinner';
 import ErrorModal from '../components/UIElements/ErrorModal';
 
+import './UserSettings.css';
+
 const UserSettings = () => {
 
     const auth = useContext(AuthContext);
@@ -42,7 +44,7 @@ const UserSettings = () => {
     }, [sendRequest, userId]);
 
     // SAVE PICKED COLOR:
-    const saveColorHandler = async () => {
+    const saveColorHandler = async (colorToSave = pickedColor) => {
         try {
             await sendRequest(
                 `${import.meta.env.VITE_BACKEND_URL}/users/${userId}/color`,
@@ -86,6 +88,11 @@ const UserSettings = () => {
                         />
                         <p>Selected color: <span style={{ color: pickedColor }}>{pickedColor}</span></p>
                         <button onClick={saveColorHandler}>Save Color</button>
+                        <button 
+                        onClick={() => setPickedColor("#ffd900")} 
+                        className="user-set-text-button"
+                        style={{ "--user-title-color": pickedColor }}
+                        >Set to default color</button>
                     </div>
                 </>
             )}

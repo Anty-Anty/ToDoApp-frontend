@@ -1,0 +1,14 @@
+.user-set-text-button {
+    margin:0.5rem;
+  background: none;
+  border: none;
+  padding: 0;
+  color: rgb(125, 125, 126);
+  cursor: pointer;
+  text-decoration: underline;
+  font: inherit;
+  font-size:0.9rem
+}
+.user-set-text-button:hover {
+  color: var(--user-title-color, #ffd900);;
+}
