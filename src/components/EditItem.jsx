@@ -123,8 +123,8 @@ const EditOverlay = props => {
                             name="description"
                             placeholder="description"
                             className='edit-textarea'
-                            validators={[VALIDATOR_MINLENGTH(3), VALIDATOR_MAXLENGTH(170)]}
-                            errorText='Please enter a valid description (at least 5 characters, max 200).'
+                            validators={[VALIDATOR_MINLENGTH(3), VALIDATOR_MAXLENGTH(150)]}
+                            errorText='Please enter a valid description (at least 5 characters, max 150).'
                             // rows={4}
                             onInput={inputHandler}
                             initialValue={formState.inputs.description.value}

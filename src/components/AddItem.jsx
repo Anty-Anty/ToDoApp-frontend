@@ -81,8 +81,8 @@ const AddItem = props => {
                                     placeholder="description"
                                     // rows={2}
                                     className='add-textarea'
-                                    validators={[VALIDATOR_MINLENGTH(3), VALIDATOR_MAXLENGTH(170)]}
-                                    errorText='Please enter a valid description (at least 5 characters, max 200).'
+                                    validators={[VALIDATOR_MINLENGTH(3), VALIDATOR_MAXLENGTH(150)]}
+                                    errorText='Please enter a valid description (at least 5 characters, max 150).'
                                     onInput={inputHandler}
                                 />
 

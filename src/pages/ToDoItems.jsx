@@ -15,6 +15,7 @@ import { useHttpClient } from '../hooks/http-hook';
 
 import '../components/Item.css';
 import '../components/ItemsList.css';
+import './ToDoItems.css'
 
 const ToDoItem = () => {
 
@@ -182,7 +183,7 @@ const ToDoItem = () => {
             )}
 
             {!showAddItem && <div className='items-list'>
-                <button className='item' onClick={showAddHandler}>
+                <button className='toDo-add-button' onClick={showAddHandler}>
                     +
                 </button>
             </div>

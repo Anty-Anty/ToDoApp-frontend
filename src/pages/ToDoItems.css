@@ -1,0 +1,8 @@
+.toDo-add-button {
+  margin: 1rem;
+  width: calc(45% - 2rem);
+  min-width: 17.5rem;
+  justify-self: center; /* Parant element has display:grit so it makes child centered */
+    /* wrong color in ios fix */
+  background-color: #1a1a1a;
+}
