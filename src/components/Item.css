@@ -110,15 +110,6 @@
   flex-direction: column;
 } */
 
-
-.button-stack {
-  display: none; /* Hidden by default */
-  flex-direction: column;
-  gap: 6px; /* Space between buttons */
-
-  flex:1;
-}
-
 .item__input {
   display: flex;
   flex-direction: column;

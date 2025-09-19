@@ -150,7 +150,7 @@ const Auth = () => {
                     <button
                         type="submit"
                         disabled={!formState.isValid}
-                        className={`btn ${!formState.isValid ? 'btn-disabled' : ''}`}
+                        className={`auth-btn ${!formState.isValid ? 'btn-disabled' : ''}`}
                     >
                         {isLoginMode ? 'login' : 'signup'}
                     </button>
