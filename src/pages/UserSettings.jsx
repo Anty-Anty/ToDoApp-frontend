@@ -62,37 +62,47 @@ const UserSettings = () => {
         <>
             <ErrorModal error={error} onClear={clearError} />
             {isLoading && <LoadingSpinner asOverlay />}
-            <h1>User information</h1>
+
             {loadedUserInfo && (
                 <>
-                    <p>User name: {loadedUserInfo.name}</p>
-                    <p>Email: {loadedUserInfo.email}</p>
-                    {/* <p>Joined: {new Date(loadedUserInfo.createdAt).toLocaleDateString()}</p> */}
-                    <p>
-                        Joined:{" "}
-                        {new Date(loadedUserInfo.createdAt).toLocaleDateString("en-US", {
-                            month: "short", // "Sep"
-                            day: "numeric", // "13"
-                            year: "numeric", // "2025"
-                        })}
-                    </p>
+                    <div className="user-set-container">
 
-                    {/* Color Picker */}
-                    <div style={{ marginTop: "20px" }}>
-                        <label htmlFor="colorPicker">Pick item title color: </label>
-                        <input
-                            id="colorPicker"
-                            type="color"
-                            value={pickedColor}
-                            onChange={(e) => setPickedColor(e.target.value)}
-                        />
-                        <button 
-                        onClick={() => setPickedColor("#ffd900")} 
-                        className="user-set-text-button"
-                        style={{ "--user-title-color": pickedColor }}
-                        >Set to default color</button>
-                        <p>Selected color: <span style={{ color: pickedColor }}>{pickedColor}</span></p>
-                        <button onClick={saveColorHandler}>Save Color</button>
+                        <div className="user-set-item">
+                            <h1>User information</h1>
+                            <p>User name: {loadedUserInfo.name}</p>
+                            <p>Email: {loadedUserInfo.email}</p>
+                            {/* <p>Joined: {new Date(loadedUserInfo.createdAt).toLocaleDateString()}</p> */}
+                            <p>
+                                Joined:{" "}
+                                {new Date(loadedUserInfo.createdAt).toLocaleDateString("en-US", {
+                                    month: "short", // "Sep"
+                                    day: "numeric", // "13"
+                                    year: "numeric", // "2025"
+                                })}
+                            </p>
+                        </div>
+
+
+                        {/* Color Picker */}
+                        <div className="user-set-item">
+                            <h1>Custom item color</h1>
+                            <div>
+                                <label htmlFor="colorPicker">Pick color: </label>
+                                <input
+                                    id="colorPicker"
+                                    type="color"
+                                    value={pickedColor}
+                                    onChange={(e) => setPickedColor(e.target.value)}
+                                />
+                            </div>
+                            <button
+                                onClick={() => setPickedColor("#ffd900")}
+                                className="user-set-text-button"
+                                style={{ "--user-title-color": pickedColor }}
+                            >Set to default color</button>
+                            <p>Selected color: <span style={{ color: pickedColor }}>{pickedColor}</span></p>
+                            <button className="user-set-save-button" onClick={saveColorHandler}>Save Color</button>
+                        </div>
                     </div>
                 </>
             )}
