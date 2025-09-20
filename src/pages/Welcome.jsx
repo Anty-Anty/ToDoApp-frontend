@@ -1,13 +1,14 @@
 import React from 'react';
 import { NavLink, Link } from "react-router-dom";
+import "./Welcome.css"
 
 const Welcome = () => {
     return (
         <>
-            <h1>Hi. Please sign up or login</h1>
-            <NavLink
+            <h1 className="welcome-title">Hi. Please sign up or login.</h1>
+            <NavLink className="welcome"
                 to="/auth"
-            >login</NavLink>
+            >login / signup</NavLink>
         </>
     )
 };

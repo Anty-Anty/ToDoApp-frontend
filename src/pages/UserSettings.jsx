@@ -86,13 +86,13 @@ const UserSettings = () => {
                             value={pickedColor}
                             onChange={(e) => setPickedColor(e.target.value)}
                         />
-                        <p>Selected color: <span style={{ color: pickedColor }}>{pickedColor}</span></p>
-                        <button onClick={saveColorHandler}>Save Color</button>
                         <button 
                         onClick={() => setPickedColor("#ffd900")} 
                         className="user-set-text-button"
                         style={{ "--user-title-color": pickedColor }}
                         >Set to default color</button>
+                        <p>Selected color: <span style={{ color: pickedColor }}>{pickedColor}</span></p>
+                        <button onClick={saveColorHandler}>Save Color</button>
                     </div>
                 </>
             )}

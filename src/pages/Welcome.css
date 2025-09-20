@@ -1,0 +1,20 @@
+.welcome-title {
+ margin-bottom: 2rem;
+}
+
+.welcome {
+    color: #ffd900;
+    margin-top: 0.5rem;
+     padding: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid;
+}
+
+.welcome:hover {
+    /* background: #777777; */
+    color: rgba(255, 255, 255, 0.87);
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.87);
+}
+

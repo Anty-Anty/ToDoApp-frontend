@@ -5,5 +5,5 @@
   justify-self: center; /* Parant element has display:grit so it makes child centered */
     /* wrong color in ios fix */
   background-color: #1a1a1a;
-    color: white;
+    color: rgba(255, 255, 255, 0.87);
 }

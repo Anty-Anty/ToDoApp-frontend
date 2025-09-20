@@ -11,13 +11,27 @@ const MainHeader = props => {
 
     return (
         <header className="main-header">
-            <h1><Link 
-            to={auth.isLoggedIn ? (`/${auth.userId}/list`):("/")}
+            <h1><Link
+                to={auth.isLoggedIn ? (`/${auth.userId}/list`) : ("/")}
             >ToDo List</Link></h1>
 
             <div className="nav-link-container">
 
-                {auth.isLoggedIn ? (
+                {/* no login button on welcome screen */}
+                
+                {auth.isLoggedIn &&
+                    <>
+                        <NavLink className='nav-link'
+                            to={`/${auth.userId}/settings`}
+                        >◯</NavLink>
+
+                        <button className='nav-link-button' type="button" onClick={auth.logout}>logout</button>
+                    </>
+                }
+
+                {/* login button on welcome screen */}
+
+                {/* {auth.isLoggedIn ? (
                     <>
                             <NavLink className='nav-link'
                                 to={`/${auth.userId}/settings`}
@@ -30,7 +44,7 @@ const MainHeader = props => {
                             to="/auth"
                         // className={({ isActive }) => isActive ? 'active-link' : undefined}
                         >{auth.isLoggedIn ? 'logout' : 'login'}</NavLink>
-                )}
+                )} */}
 
             </div>
         </header>
