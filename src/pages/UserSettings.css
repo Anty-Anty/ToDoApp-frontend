@@ -34,8 +34,6 @@ margin-bottom: 1.7rem;
   gap: 1rem;
 }
 
-
-
 .user-set-text-button {
   margin: 0.7rem;
   margin-left: 0;
@@ -56,6 +54,21 @@ margin-bottom: 1.7rem;
 
 .user-set-save-button {
   margin-top: 0.7rem;
+
+    border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.3em 1em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+
+  display: flex;
+  align-items: center;   
+  justify-content: center; 
+  color: rgba(255, 255, 255, 0.87);
 }
 
 .phantom
