@@ -68,6 +68,7 @@ const UserSettings = () => {
                     <div className="user-set-container">
 
                         <div className="user-set-item">
+                            <span className="phantom"></span>
                             <h1>User information</h1>
                             <p>User name: {loadedUserInfo.name}</p>
                             <p>Email: {loadedUserInfo.email}</p>
@@ -85,6 +86,7 @@ const UserSettings = () => {
 
                         {/* Color Picker */}
                         <div className="user-set-item">
+                            <span className="phantom"></span>
                             <h1>Custom item color</h1>
                             <div>
                                 <label htmlFor="colorPicker">Pick color: </label>
