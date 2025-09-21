@@ -5,6 +5,7 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 2rem;
+  color:rgba(255, 255, 255, 0.87);
 }
 
 .user-set-item {
@@ -49,10 +50,16 @@ margin-bottom: 1.7rem;
 }
 
 .user-set-text-button:hover {
-  color: var(--user-title-color, #ffd900);
+  color: #ffd900;
   ;
 }
 
 .user-set-save-button {
   margin-top: 0.7rem;
+}
+
+@media (max-width: 768px) {
+  .user-set-item {
+    width: 70%;
+  }
 }
