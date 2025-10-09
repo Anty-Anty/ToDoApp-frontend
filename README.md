@@ -1,1 +1,1 @@
-CRUD app. Helps to build todo list. Frontend.
+CRUD app. Frontend. Development code.
