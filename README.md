@@ -11,9 +11,9 @@ https://github.com/Anty-Anty/ToDoApp-backend
 ## Live demo:
 https://todoappoo.netlify.app/
 
-⚠️ Cold start notice
+<!-- ⚠️ Cold start notice
 The backend is hosted on Render’s free tier.
-Initial requests may take up to ~60 seconds due to server cold start.
+Initial requests may take up to ~60 seconds due to server cold start. -->
 
 ### Demo Login & Authentication
 This app requires authentication.
